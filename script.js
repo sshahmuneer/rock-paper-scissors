@@ -38,11 +38,12 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
+
+    let playerWins = 0;
+    let computerWins = 0;
     for (let i = 0; i < 5; i++) {
         let playerSelection = prompt("Type rock, paper, or scissors");
         let computerSelection = getComputerChoice();
-        let playerWins = 0;
-        let computerWins = 0;
         let result = playRound(playerSelection, computerSelection);
         if (result === -1) {
             computerWins++;
