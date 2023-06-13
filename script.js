@@ -36,3 +36,30 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 }
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt("Type rock, paper, or scissors");
+        let computerSelection = getComputerChoice();
+        let playerWins = 0;
+        let computerWins = 0;
+        let result = playRound(playerSelection, computerSelection);
+        if (result === -1) {
+            computerWins++;
+            console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+        } else if (result === 0) {
+            console.log('Tie!');
+        } else if (result === 1) {
+            playerWins++;
+            console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+        }
+    }
+
+    if (playerWins > computerWins) {
+        console.log('You are the winner!');
+    } else if (playerWins < computerWins) {
+        console.log('You lost.');
+    } else {
+        console.log('Tie! There is no winner.');
+    }
+}
