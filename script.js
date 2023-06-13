@@ -1,10 +1,10 @@
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3) + 1;
     if (randomNumber === 1) {
-        return 'Rock';
+        return 'rock';
     } else if (randomNumber === 2) {
-        return 'Paper';
+        return 'paper';
     } else if (randomNumber === 3) {
-        return 'Scissors';
+        return 'scissors';
     }
 }
