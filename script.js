@@ -64,3 +64,5 @@ function game() {
         console.log('Tie! There is no winner.');
     }
 }
+
+game();
