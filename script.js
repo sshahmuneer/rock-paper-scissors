@@ -12,27 +12,27 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     if (playerSelection.toLowerCase() === 'rock') {
         if (computerSelection === 'rock') {
-            return 'Tie!';
+            return 0;
         } else if (computerSelection === 'paper') {
-            return `You lose! ${computerSelection} beats ${playerSelection}`;
+            return -1;
         } else if (computerSelection === 'scissors') {
-            return `You Win! ${playerSelection} beats ${computerSelection}`;
+            return 1;
         }
     } else if (playerSelection.toLowerCase() === 'paper') {
         if (computerSelection === 'rock') {
-            return `You Win! ${playerSelection} beats ${computerSelection}`;
+            return 1;
         } else if (computerSelection === 'paper') {
-            return 'Tie!';
+            return 0;
         } else if (computerSelection === 'scissors') {
-            return `You lose! ${computerSelection} beats ${playerSelection}`;
+            return -1;
         }
     } else if (playerSelection.toLowerCase() === 'scissors') {
         if (computerSelection === 'rock') {
-            return `You lose! ${computerSelection} beats ${playerSelection}`;
+            return -1;
         } else if (computerSelection === 'paper') {
-            return `You Win! ${playerSelection} beats ${computerSelection}`;
+            return 1;
         } else if (computerSelection === 'scissors') {
-            return 'Tie!';
+            return 0;
         }
     }
 }
