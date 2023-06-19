@@ -76,3 +76,8 @@ let paperButton = document.querySelector('#paper');
 paperButton.addEventListener('click', () => {
     console.log('paper button pressed');
 });
+
+let scissorsButton = document.querySelector('#scissors');
+scissorsButton.addEventListener('click', () => {
+    console.log('scissors button pressed');
+});
