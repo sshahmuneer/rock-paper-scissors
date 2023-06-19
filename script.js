@@ -68,8 +68,11 @@ function playRound(playerSelection, computerSelection) {
 // game();
 
 let rockButton = document.querySelector('#rock');
-rockButton.addEventListener('click', () => {
-    console.log('rock button pressed');
+rockButton.addEventListener('click', (event) => {
+    let playerSelection = event.target.id;
+    let computerSelection = getComputerChoice();
+    let result = playRound(playerSelection, computerSelection);
+    displayRoundResult(playerSelection, computerSelection, result);
 });
 
 let paperButton = document.querySelector('#paper');
