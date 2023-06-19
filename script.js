@@ -71,3 +71,8 @@ let rockButton = document.querySelector('#rock');
 rockButton.addEventListener('click', () => {
     console.log('rock button pressed');
 });
+
+let paperButton = document.querySelector('#paper');
+paperButton.addEventListener('click', () => {
+    console.log('paper button pressed');
+});
