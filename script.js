@@ -37,32 +37,37 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
+// function game() {
 
-    let playerWins = 0;
-    let computerWins = 0;
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Type rock, paper, or scissors");
-        let computerSelection = getComputerChoice();
-        let result = playRound(playerSelection, computerSelection);
-        if (result === -1) {
-            computerWins++;
-            console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
-        } else if (result === 0) {
-            console.log('Tie!');
-        } else if (result === 1) {
-            playerWins++;
-            console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
-        }
-    }
+//     let playerWins = 0;
+//     let computerWins = 0;
+//     for (let i = 0; i < 5; i++) {
+//         let playerSelection = prompt("Type rock, paper, or scissors");
+//         let computerSelection = getComputerChoice();
+//         let result = playRound(playerSelection, computerSelection);
+//         if (result === -1) {
+//             computerWins++;
+//             console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+//         } else if (result === 0) {
+//             console.log('Tie!');
+//         } else if (result === 1) {
+//             playerWins++;
+//             console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+//         }
+//     }
 
-    if (playerWins > computerWins) {
-        console.log('You are the winner!');
-    } else if (playerWins < computerWins) {
-        console.log('You lost.');
-    } else {
-        console.log('Tie! There is no winner.');
-    }
-}
+//     if (playerWins > computerWins) {
+//         console.log('You are the winner!');
+//     } else if (playerWins < computerWins) {
+//         console.log('You lost.');
+//     } else {
+//         console.log('Tie! There is no winner.');
+//     }
+// }
 
-game();
+// game();
+
+let rockButton = document.querySelector('#rock');
+rockButton.addEventListener('click', () => {
+    console.log('rock button pressed');
+});
