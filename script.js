@@ -1,3 +1,6 @@
+let playerWins = 0;
+let computerWins = 0;
+
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3) + 1;
     if (randomNumber === 1) {
@@ -84,3 +87,15 @@ let scissorsButton = document.querySelector('#scissors');
 scissorsButton.addEventListener('click', () => {
     console.log('scissors button pressed');
 });
+
+function displayRoundResult(playerSelection, computerSelection, result) {
+    if (result === -1) {
+        computerWins++;
+        console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+    } else if (result === 0) {
+        console.log('Tie!');
+    } else if (result === 1) {
+        playerWins++;
+        console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+    }
+}
