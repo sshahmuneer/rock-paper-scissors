@@ -70,13 +70,15 @@ function playRound(playerSelection, computerSelection) {
 
 // game();
 
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('button:not(.reset)');
 buttons.forEach((button) => {
     button.addEventListener('click', (event) => {
-        let playerSelection = button.id;
-        let computerSelection = getComputerChoice();
-        let result = playRound(playerSelection, computerSelection);
-        displayRoundResult(playerSelection, computerSelection, result);
+        if (playerWins < 5 && computerWins < 5) {
+            let playerSelection = button.id;
+            let computerSelection = getComputerChoice();
+            let result = playRound(playerSelection, computerSelection);
+            displayRoundResult(playerSelection, computerSelection, result);
+        }
     });
 });
 
@@ -98,5 +100,9 @@ function displayRoundResult(playerSelection, computerSelection, result) {
         roundResult.textContent = `You Win! ${playerSelection} beats ${computerSelection}`;
     }
 
-    results.appendChild(roundResult);
+    if (playerWins === 5) {
+        roundResult.textContent = 'Congratulations! You won.';
+    } else if (computerWins === 5) {
+        roundResult.textContent = 'Game over. You lost.';
+    }
 }
