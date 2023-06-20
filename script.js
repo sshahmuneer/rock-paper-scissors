@@ -87,6 +87,7 @@ function displayRoundResult(playerSelection, computerSelection, result) {
     const roundResult = document.querySelector('#result-message');
     const playerScore = document.querySelector('#player-score');
     const computerScore = document.querySelector('#computer-score');
+    const playAgainButton = document.querySelector('.play-again-button');
 
     if (result === -1) {
         computerWins++;
@@ -102,8 +103,10 @@ function displayRoundResult(playerSelection, computerSelection, result) {
 
     if (playerWins === 5) {
         roundResult.textContent = 'Congratulations! You won.';
+        playAgainButton.classList.toggle('hide');
     } else if (computerWins === 5) {
         roundResult.textContent = 'Game over. You lost.';
+        playAgainButton.classList.toggle('hide');
     }
 }
 
@@ -119,4 +122,5 @@ playAgainButton.addEventListener('click', (event) => {
     roundResult.textContent = '';
     playerScore.textContent = `Player: ${playerWins}`;
     computerScore.textContent = `Computer: ${computerWins}`;
+    playAgainButton.classList.toggle('hide');
 });
