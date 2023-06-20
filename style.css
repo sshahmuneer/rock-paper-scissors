@@ -1,7 +1,14 @@
 body {
     text-align: center;
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', monospace;
 }
 
+button {
+    cursor: pointer; 
+    padding: 0;
+}
 .play-again-button {
     color: green;
 }
@@ -13,4 +20,11 @@ body {
 img {
     width: 220px;
     height: 200px;
+}
+
+h1 {
+    font-size: ;
+}
+#results, #score {
+    margin: 10px;
 }
