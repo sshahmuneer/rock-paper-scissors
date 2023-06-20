@@ -81,13 +81,18 @@ buttons.forEach((button) => {
 });
 
 function displayRoundResult(playerSelection, computerSelection, result) {
+    const results = document.querySelector('#results');
+    const roundResult = document.createElement('div');
+
     if (result === -1) {
         computerWins++;
-        console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+        roundResult.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
     } else if (result === 0) {
-        console.log('Tie!');
+        roundResult.textContent = 'Tie!';
     } else if (result === 1) {
         playerWins++;
-        console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
+        roundResult.textContent = `You Win! ${playerSelection} beats ${computerSelection}`;
     }
+
+    results.appendChild(roundResult);
 }
