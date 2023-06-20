@@ -70,22 +70,14 @@ function playRound(playerSelection, computerSelection) {
 
 // game();
 
-let rockButton = document.querySelector('#rock');
-rockButton.addEventListener('click', (event) => {
-    let playerSelection = event.target.id;
-    let computerSelection = getComputerChoice();
-    let result = playRound(playerSelection, computerSelection);
-    displayRoundResult(playerSelection, computerSelection, result);
-});
-
-let paperButton = document.querySelector('#paper');
-paperButton.addEventListener('click', () => {
-    console.log('paper button pressed');
-});
-
-let scissorsButton = document.querySelector('#scissors');
-scissorsButton.addEventListener('click', () => {
-    console.log('scissors button pressed');
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+        let playerSelection = button.id;
+        let computerSelection = getComputerChoice();
+        let result = playRound(playerSelection, computerSelection);
+        displayRoundResult(playerSelection, computerSelection, result);
+    });
 });
 
 function displayRoundResult(playerSelection, computerSelection, result) {
