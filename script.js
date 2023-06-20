@@ -82,7 +82,7 @@ buttons.forEach((button) => {
 
 function displayRoundResult(playerSelection, computerSelection, result) {
     const results = document.querySelector('#results');
-    const roundResult = document.createElement('div');
+    const roundResult = document.querySelector('#result-message');
     const playerScore = document.querySelector('#player-score');
     const computerScore = document.querySelector('#computer-score');
 
