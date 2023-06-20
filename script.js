@@ -70,7 +70,7 @@ function playRound(playerSelection, computerSelection) {
 
 // game();
 
-const buttons = document.querySelectorAll('button:not(.reset)');
+const buttons = document.querySelectorAll('button:not(.play-again-button)');
 buttons.forEach((button) => {
     button.addEventListener('click', (event) => {
         if (playerWins < 5 && computerWins < 5) {
@@ -106,3 +106,17 @@ function displayRoundResult(playerSelection, computerSelection, result) {
         roundResult.textContent = 'Game over. You lost.';
     }
 }
+
+const playAgainButton = document.querySelector('.play-again-button');
+playAgainButton.addEventListener('click', (event) => {
+    const roundResult = document.querySelector('#result-message');
+    const playerScore = document.querySelector('#player-score');
+    const computerScore = document.querySelector('#computer-score');
+    
+
+    playerWins = 0;
+    computerWins = 0;
+    roundResult.textContent = '';
+    playerScore.textContent = `Player: ${playerWins}`;
+    computerScore.textContent = `Computer: ${computerWins}`;
+});
