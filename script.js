@@ -92,13 +92,13 @@ function displayRoundResult(playerSelection, computerSelection, result) {
     if (result === -1) {
         computerWins++;
         computerScore.textContent = `Computer: ${computerWins}`;
-        roundResult.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
+        roundResult.textContent = `You lose! ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)} beats ${playerSelection}.`;
     } else if (result === 0) {
         roundResult.textContent = 'Tie!';
     } else if (result === 1) {
         playerWins++;
         playerScore.textContent = `Player: ${playerWins}`;
-        roundResult.textContent = `You Win! ${playerSelection} beats ${computerSelection}`;
+        roundResult.textContent = `You Win! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)} beats ${computerSelection}.`;
     }
 
     if (playerWins === 5) {
