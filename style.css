@@ -8,9 +8,24 @@ body {
 button {
     cursor: pointer; 
     padding: 0;
+    border-width: 7px;
+    border-color: white;
+    margin: 20px;
+    transition: transform 0.3s;
 }
+
+button:hover {
+    transform: scale(1.1, 1.1);
+}
+
 .play-again-button {
-    color: green;
+    padding: 10px;
+    transition-duration: 0s;
+}
+
+.play-again-button:hover {
+    background-color: black;
+    color: white;
 }
 
 .hide {
@@ -23,8 +38,10 @@ img {
 }
 
 h1 {
-    font-size: ;
+    font-size: 5em;
+    margin: 40px 0;
 }
+
 #results, #score {
     margin: 10px;
 }
